@@ -20,6 +20,21 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
+  
+  <div class="field">
+    <%= f.label :location %><br />
+    <%= f.text_field :location, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :latitude %><br />
+    <%= f.number_field :latitude %>
+  </div>
+
+  <div class="field">
+    <%= f.label :longitude %><br />
+    <%= f.number_field :longitude %>
+  </div>
 
   <div class="actions">
     <%= f.submit "Sign up" %>
