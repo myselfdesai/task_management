@@ -21,6 +21,22 @@
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
 
+  <!-- Add fields for location, latitude, and longitude -->
+  <div class="field">
+    <%= f.label :location %><br />
+    <%= f.text_field :location %>
+  </div>
+
+  <div class="field">
+    <%= f.label :latitude %><br />
+    <%= f.number_field :latitude %>
+  </div>
+
+  <div class="field">
+    <%= f.label :longitude %><br />
+    <%= f.number_field :longitude %>
+  </div>
+
   <div class="actions">
     <%= f.submit "Sign up" %>
   </div>
