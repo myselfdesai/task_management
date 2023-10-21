@@ -1,13 +1,19 @@
 <h1>Task List</h1>
 
-<ul>
-  <% @tasks.each do |task| %>
-    <li>
-      <strong><%= task.title %></strong><br>
-      Description: <%= task.description %><br>
-      Due Date: <%= task.due_date %>
-    </li>
-  <% end %>
-</ul>
+<% if @tasks.any? %>
+  <ul>
+    <% @tasks.each do |task| %>
+      <li>
+        <strong><%= task.title %></strong><br>
+        Description: <%= task.description %><br>
+        Due Date: <%= task.due_date %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>No tasks found for your account.</p>
+<% end %>
 
-<%= link_to "Show All Tasks", tasks_path(show_all: true) if user_signed_in? %>
+<% if user_signed_in? %>
+  <%= link_to "Show All Tasks", tasks_path(show_all: true) %>
+<% end %>
